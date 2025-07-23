@@ -2,11 +2,19 @@
 
 import { useState, useEffect } from "react"
 import { ChevronUp } from "lucide-react"
+import { usePathname } from "next/navigation"
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
+  const pathname = usePathname() // ✅ 현재 페이지 경로 감지
 
+  // ✅ 페이지가 변경되면 맨 위로 이동
+  useEffect(() => {
+    window.scrollTo({ top: 0 })
+  }, [pathname])
+
+  // 스크롤 이벤트로 버튼 상태 및 진행률 업데이트
   useEffect(() => {
     let ticking = false
 
@@ -36,7 +44,6 @@ export default function ScrollToTop() {
     })
   }
 
-  // SVG circle circumference calculation
   const radius = 18
   const circumference = 2 * Math.PI * radius
   const strokeDashoffset = circumference - (scrollProgress / 100) * circumference
@@ -52,9 +59,7 @@ export default function ScrollToTop() {
       aria-label="Scroll to top"
     >
       <div className="relative">
-        {/* Progress Ring */}
         <svg className="w-12 h-12 transform -rotate-90" width="48" height="48">
-          {/* Background circle */}
           <circle
             cx="24"
             cy="24"
@@ -64,7 +69,6 @@ export default function ScrollToTop() {
             fill="transparent"
             className="text-gray-300 dark:text-gray-600"
           />
-          {/* Progress circle */}
           <circle
             cx="24"
             cy="24"
@@ -79,7 +83,6 @@ export default function ScrollToTop() {
           />
         </svg>
 
-        {/* Center button */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="w-8 h-8 bg-white dark:bg-gray-800 rounded-full shadow-lg flex items-center justify-center group-hover:bg-yellow-50 dark:group-hover:bg-yellow-900/20 transition-colors duration-200">
             <ChevronUp className="w-4 h-4 text-gray-700 dark:text-gray-300 group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors duration-200" />
