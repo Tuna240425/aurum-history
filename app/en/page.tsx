@@ -17,8 +17,7 @@ export default function EnglishHomePage() {
   if (!mounted) return null
 
   return (
-    <div className="theme-bg min-h-screen">>
-
+    <div className="theme-bg min-h-screen">
       <div className="theme-bg">
 
         {/* Hero Section - 새로운 헤더 높이에 맞춰 조정 */}
