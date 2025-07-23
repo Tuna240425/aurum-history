@@ -25,12 +25,17 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko" className="scroll-smooth">
-      <body className={`${inter.className} bg-white dark:bg-black text-black dark:text-white transition-colors duration-300`}>
+      <body className={`${inter.className} bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 min-h-screen flex flex-col`}>
         <Providers>
           <CustomCursor />       {/* ✅ 마우스 커서 효과 */}
           <ScrollToTop />        {/* ✅ 스크롤 상단 이동 */}
           <Header />
-          <main>{children}</main>
+
+          {/* ✅ main이 flex-grow로 중간 공간을 밀어줌 */}
+          <main className="flex-grow">
+            {children}
+          </main>
+
           <Footer />
         </Providers>
       </body>

@@ -172,7 +172,7 @@ export default function Footer() {
           {/* Newsroom */}
           <div className="space-y-4 flex-shrink-0">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white transition-colors duration-300">
-              뉴스룸
+              커뮤니티
             </h3>
             <ul className="space-y-3">
               <li>
