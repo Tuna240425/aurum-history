@@ -24,7 +24,7 @@ export default function HomePage() {
 
   return (
     <>
-    <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth">
+    <main className="min-h-screen scroll-smooth">
       <section className="snap-start">
         <HistoryHero />
       </section>
