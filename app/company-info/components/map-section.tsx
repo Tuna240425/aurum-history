@@ -12,7 +12,7 @@ export default function MapSection() {
             오시는 <span className="text-yellow-600 dark:text-yellow-400">길</span>
           </h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
-            대중교통과 자가용 모두 편리한 위치에 자리하고 있습니다
+            서울특별시 송파구 위례성대로12길 36, 4층 전체 <br/> 대중교통과 자가용 모두 편리한 위치에 자리하고 있습니다
           </p>
         </div>
 
